@@ -1,0 +1,28 @@
+{
+  "type": "module",
+  "name": "pinksale-finance-bot",
+  "author": "Mykola Odnosumov <mkloouo@gmail.com>",
+  "private": true,
+  "version": "0.0.1",
+  "main": "./src/index.js",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "node src/index.js",
+    "build": "nexe -br proxies.txt node_modules/** src/index.js"
+  },
+  "dependencies": {
+    "https-proxy-agent": "^5.0.0",
+    "nexe": "^4.0.0-beta.19",
+    "node-fetch": "^3.0.0",
+    "proxy-chain": "^1.0.4",
+    "puppeteer": "^11.0.0"
+  },
+  "bin": "src/index.js",
+  "pkg": {
+    "scripts": "src/**/*.js",
+    "assets": [
+      "proxies.txt"
+    ],
+    "output": "dist"
+  }
+}
