@@ -1,0 +1,15 @@
+{
+  "type": "module",
+  "name": "pinksale-finance-bot",
+  "author": "Mykola Odnosumov <mkloouo@gmail.com>",
+  "private": true,
+  "version": "0.0.1",
+  "main": "./src/index.js",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "node-fetch": "^3.0.0"
+  }
+}
