@@ -11,5 +11,5 @@ async function main() {
 }
 
 main()
-  .then((result) => console.log('closed:', result))
+  .then((result) => console.log('[close]:', result))
   .catch((e) => console.log(e));
