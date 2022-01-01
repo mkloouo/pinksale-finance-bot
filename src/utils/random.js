@@ -1,4 +1,4 @@
-import { config } from '../constants/config.js';
+import { config } from '../config.js';
 
 export const randomIntFromInterval = (min, max) => {
   // min and max included

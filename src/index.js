@@ -1,18 +1,15 @@
-import fs from 'fs';
-import { exit } from 'process';
-
 import { performSiteActions } from './utils/puppeteer.js';
-import { config } from './constants/config.js';
+import { config } from './config.js';
 
 async function main() {
-  process.setMaxListeners(config.parallelJobs + 10);
+  process.setMaxListeners(config.parallelJobs + 5);
   while (true) {
     await performSiteActions(config.urls.pinkSale, (...args) => {
-      console.log('finished with:', args);
+      console.log('[finish]:', args);
     });
   }
 }
 
 main()
-  .then((result) => console.log('then result:', result))
+  .then((result) => console.log('closed:', result))
   .catch((e) => console.log(e));

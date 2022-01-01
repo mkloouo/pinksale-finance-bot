@@ -1,5 +1,5 @@
 export const config = {
-  parallelJobs: 10,
+  parallelJobs: 5,
   urls: {
     pinkSale:
       'https://www.pinksale.finance/#/launchpad/0xBaF120916Cb93a9007b8aA2eA7849Cbc5D1b718b?chain=BSC',

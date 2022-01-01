@@ -2,12 +2,12 @@ import puppeteer from 'puppeteer';
 import proxyChain from 'proxy-chain';
 
 import { getRandomElementFromArray, getRandomUserAgent } from './random.js';
-import { makeProxyString, getRandomProxy } from './proxy.js';
-import { config } from '../constants/config.js';
+import { formProxyString, getRandomProxy } from './proxy.js';
+import { config } from '../config.js';
 
 export const createBrowser = async () => {
   const proxyObject = getRandomProxy();
-  const oldProxy = makeProxyString(proxyObject);
+  const oldProxy = formProxyString(proxyObject);
   const proxy = await proxyChain.anonymizeProxy(oldProxy);
   const userAgent = getRandomUserAgent();
 
