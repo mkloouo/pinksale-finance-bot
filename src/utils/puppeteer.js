@@ -50,10 +50,11 @@ export const simulateScroll = async (page) => {
 };
 
 export const simulateInput = async (page) => {
-  const links = ['0xBaF120916Cb93a9007b8aA2eA7849Cbc5D1b718b'];
-  const randomLink = getRandomElementFromArray(links);
-  const anchorElement = await page.$x(`//a[contains(., '${randomLink}')]`);
-  await anchorElement[0].click();
+  const anchors = await page.$x(
+    `//div[contains(@class, "table-container")]//a`,
+  );
+  const randomAnchor = getRandomElementFromArray(anchors);
+  await randomAnchor.click();
 };
 
 export const performSiteActions = async (url, log) => {
@@ -76,8 +77,8 @@ export const performSiteActions = async (url, log) => {
       height: 800,
     });
 
-    await simulateInput(page);
     await simulateScroll(page);
+    await simulateInput(page);
   } catch (e) {
     console.log(e);
   } finally {
